@@ -1,4 +1,4 @@
-from flask import Flask, render_template ,redirect, url_for, request, make_response,flash,url_for,send_from_directory,jsonify
+from flask import Flask, render_template ,redirect, url_for, session, request, make_response,flash,url_for,send_from_directory,jsonify
 from pymongo import MongoClient
 from functools import wraps
 import string 
@@ -7,11 +7,12 @@ import random
 
 app=Flask(__name__)
 app.config['SECRET_KEY'] = '1234login'
-client = MongoClient('mongodb://localhost:27017/users')
-db = client['web_course']
-collection = db['practice']
+client = MongoClient('mongodb://localhost:27017/')
+db = client['Project']
+collection = db['UserData']
 note = db['note']
 S=10
+main_user = ""
 
 def is_authenticated(request):
     username = request.cookies.get('username', '')
@@ -36,7 +37,6 @@ def login_required(func):
 
 @app.route('/')
 def index():
-    
     blog = list(note.find({},{'_id': False}))
     for x in blog:
         print(x)
@@ -45,7 +45,17 @@ def index():
 @app.route('/profile/')
 @login_required
 def profile():
-    return render_template('profile.html')
+    if 'username' in session:
+        user = collection.find_one({'username': session['username']})
+        return render_template('profile.html',
+        fname = user['FirstName'],
+        finame = user['FirstName'],
+        sname = user['LastName'],
+        uname = user['username'],
+        bdate = user['Birthdate']
+        )
+    return redirect(url_for('login'))
+    
 
 @app.route('/login',methods=['GET', 'POST'])
 def login():
@@ -56,6 +66,7 @@ def login():
         if user != None:
             if username == user['username']:
                 if password == user['password']:
+                    session['username'] = request.form['username']
                     random_string = ''.join(random.choices(string.ascii_uppercase + string.digits, k = S)) 
                     session_token = random_string
                     response = make_response(redirect(url_for('profile')))
@@ -80,10 +91,17 @@ def signup():
             flash('Username is already existed', 'error')
             return render_template("signup.html")
         else:
-            collection.insert_one({
-                'username': request.form['username'],
-                'password': request.form['password']
-            })
+            if request.form['password'] == request.form['cpassword']:
+                collection.insert_one({
+                    'username': request.form['username'],
+                    'password': request.form['password'],
+                    'FirstName' : request.form['firstname'],
+                    'LastName' : request.form['lastname'],
+                    'Birthdate' : request.form['birthdate']
+                })
+            else:
+                flash('Please enter same password', 'error')
+                return render_template("signup.html")
 
         return render_template("login.html")
 
@@ -97,6 +115,7 @@ def signout():
     response = make_response(redirect(url_for('login')))
     response.set_cookie(key='token',value='')
     flash('Sign Out successfully!', 'message')
+    session.pop('username',None)
     return response
 
 @app.route('/blog', methods=['GET', 'POST'])

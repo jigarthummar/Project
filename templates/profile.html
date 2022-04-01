@@ -32,7 +32,7 @@
     <main id="your-story">
         <section id="posts">
             <div class="containor">
-                <h3>Welcome</h1>
+                <h3>Welcome  {{ fname }} </h1>
                     <div class="flex_items">
                         <img class="newimg" src="/static/images/4511299.jpg"> 
                     </div>
@@ -40,25 +40,25 @@
                     <table style="padding:10px" >
                         <tr>
                             <td style="padding:10px">Username: </td>
-                            <td> -m- </td>
+                            <td> {{ uname }}</td>
                         </tr>
                         <tr>
                             <td style="padding:10px">First name: </td>
-                            <td> -m- </td>
+                            <td> {{ finame }} </td>
                         </tr>
                         <tr>
                             <td style="padding:10px">Surname: </td>
-                            <td> -m- </td>
+                            <td> {{ sname }} </td>
                         </tr>
                         <tr>
                             <td style="padding:10px">BirthDate: </td>
-                            <td> -m- </td>
+                            <td> {{ bdate }}</td>
                         </tr>
                         
                     </table>
 
 
-                <a href="{{ url_for('input') }}" class="nb-link">Select Course</a>
+                <a href="{{ url_for('index') }}" class="nb-link">Select Course</a>
                 <a href="{{ url_for('index') }}" class="nb-link">Your Courses</a>
             </div>
         </section>
