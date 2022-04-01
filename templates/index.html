@@ -15,7 +15,7 @@
 
     <header id="header" class="shadow bg-light">
         <nav class="container navbar">
-            <a href="{{ url_for('index') }}" class="nav-blog text-dark">Blog</a>
+            <a href="{{ url_for('index') }}" class="nav-blog text-dark">Code Scool</a>
 
             <!-- collapse -->
             <div class="collapse">
@@ -34,15 +34,7 @@
     <main id="public-story">
         <section id="posts">
             <div class="containor">
-                <h1>Blogs</h1>
-                {%for blog in note %}
-                    <p><i class="fa-solid fa-user"></i> {{ blog['username'] }}</p>
-                    <h4>{{ blog['title'] }}</h4>
-                    <div class="note">
-                        <p>{{ blog['note'] }}</p>
-                    </div>
-                    <hr>
-                {% endfor %}
+                
             </div>
         </section>
     </main>
