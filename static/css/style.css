@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Poppins&family=Roboto&display=swap');
+
+
+/* root styling */
+
+:root{
+    --light: #f8f9fa;
+    --secondary: #adb5bd;
+    --dark: #343a40;
+    --primary-color: rgb(129, 127, 246);
+    --secondary-color: #2ec4b6;
+    --border: #e9ecef;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+h4{
+    color: #403866;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+p{
+    color: black;
+    font-family: 'Roboto', sans-serif;
+}
+
+*>*{
+    box-sizing: border-box;
+}
+
+/* global styling */
+
+.text-light{
+    color: var(--light);
+}
+.text-secondary{
+    color: var(--secondary);
+}
+.text-dark{
+    color: var(--dark);
+}
+.text-primary{
+    color: var(--primary-color);
+}
+.bg-light{
+     background-color: var(--light);
+}
+
+.container{
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: auto;
+}
+
+/* section styling */
+
+/* -------Navigation menu------- */
+.navbar{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.nav-blog{
+    font-family: 'DM Sans', sans-serif;
+    font-weight: bold;
+    align-self: center;
+    font-size: 32px;
+}
+.nav-blog:hover{
+    color: var(--primary-color);
+}
+
+.collapse{
+    align-self: center;
+}
+
+.nav-link{
+    font-size: 18px;
+    margin: 12px;
+    color: var(--dark);
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-link:hover{
+    color: var(--primary-color);
+}
+
+/* .search-box{ 
+    display: inline;
+    border-right: 1px solid var(--dark);
+    padding-right: 10px;
+    margin-right: 10px;
+}*/
+/* -------.Navigation menu------- */
+
+
+/*------ main section ------*/
+
+#public-story{
+    margin-top: 50px;
+    margin-left:10%;
+    margin-right:10%;
+}
+
+
+
+/*------ .main section ------*/
+
+

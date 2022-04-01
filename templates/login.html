@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+    <html lang="en">
+    <title>Blog</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="static/css/login.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header" class="shadow bg-light">
+        <nav class="container navbar">
+            <a href="{{ url_for('index') }}" class="nav-blog text-dark">Blog</a>
+
+            <!-- collapse -->
+            <div class="collapse">
+                <ul class="navbar-nav">
+                    <a href="{{ url_for('index') }}" class="nav-link">Home</a>
+                    <a href="{{ url_for('signup') }}" class="nav-link">Signup</a>
+                    <a href="{{ url_for('profile') }}" class="nav-link">Proflie</a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- .Header -->
+    <div class="log-container">
+        {% extends "layout.html" %}
+        {% block body %}
+            <h1>Login</h1>
+        {% if error %}
+            <p class=error><strong>Error:</strong> {{ error }}
+        {% endif %}
+        <form action="/login" method="post">
+            {% if error %}
+                <p class=error><strong>Error:</strong> {{ error }}
+            {% endif %}
+            
+            <input type="text" id="username" placeholder="Username" name="username"><br>
+            
+            <input type="password" id="password" placeholder="Password" name="password"><br>
+
+            <p>Don't have account? <a class="reg" href="{{ url_for('signup') }}">Register</a></p>
+
+            <input type="submit" class="rbtn" value="Login">
+        </form>
+        {% endblock %}
+    </div>
+</body>

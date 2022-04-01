@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Blog</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font awesome icons cdn-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <header id="header" class="shadow bg-light">
+        <nav class="container navbar">
+            <a href="{{ url_for('index') }}" class="nav-blog text-dark">Blog</a>
+
+            <!-- collapse -->
+            <div class="collapse">
+                <ul class="navbar-nav">
+                    <a href="#" class="nav-link">Home</a>
+                    <a href="{{ url_for('login') }}" class="nav-link">Login</a>
+                    <a href="{{ url_for('profile') }}" class="nav-link">Proflie</a>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- .Header -->
+
+
+    <main id="public-story">
+        <section id="posts">
+            <div class="containor">
+                <h1>Blogs</h1>
+                {%for blog in note %}
+                    <p><i class="fa-solid fa-user"></i> {{ blog['username'] }}</p>
+                    <h4>{{ blog['title'] }}</h4>
+                    <div class="note">
+                        <p>{{ blog['note'] }}</p>
+                    </div>
+                    <hr>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+
+
+
+
+</body>
+</html>

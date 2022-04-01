@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Poppins&family=Roboto&display=swap');
+
+
+/* root styling */
+
+:root{
+    --light: #f8f9fa;
+    --secondary: #adb5bd;
+    --dark: #343a40;
+    --primary-color: rgb(129, 127, 246);
+    --secondary-color: #2ec4b6;
+    --border: #e9ecef;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+table{
+    font-size: 17px;
+    margin-bottom: 25px;
+}
+h3{
+    font-family: 'DM Sans', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+*>*{
+    box-sizing: border-box;
+}
+
+/* global styling */
+
+.text-light{
+    color: var(--light);
+}
+.text-secondary{
+    color: var(--secondary);
+}
+.text-dark{
+    color: var(--dark);
+}
+.text-primary{
+    color: var(--primary-color);
+}
+.bg-light{
+     background-color: var(--light);
+}
+
+.container{
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: auto;
+}
+
+/* section styling */
+
+/* -------Navigation menu------- */
+.navbar{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.nav-blog{
+    font-family: 'DM Sans', sans-serif;
+    font-weight: bold;
+    align-self: center;
+    font-size: 32px;
+}
+.nav-blog:hover{
+    color: var(--primary-color);
+}
+
+.collapse{
+    align-self: center;
+}
+
+.nav-link{
+    font-size: 18px;
+    margin: 12px;
+    color: var(--dark);
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-link:hover{
+    color: var(--primary-color);
+}
+
+.newimg{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #000000;
+    display: flex;
+    margin-left:50%;
+    
+    object-fit: cover;
+}
+
+
+/* -------.Navigation menu------- */
+
+
+/*------ main section ------*/
+
+#your-story{
+    margin-top: 5em;
+    margin-left: 15em;
+}
+.profile{
+    margin: auto;
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+.nb-link{
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 15px;
+    padding: 16px;
+    width:20%;
+    border-radius: 5px;
+    line-height: 1.2;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: 0.8;
+    display: block;
+    font-family: 'Ubuntu', sans-serif;
+    border: none;
+    margin-top: 10px;
+}
+
+.nb-link:hover{
+    opacity: 1;
+    background-color: #403866;
+}
+
+
+
+
+/*------ .main section ------*/
+
+

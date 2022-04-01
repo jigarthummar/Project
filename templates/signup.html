@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<head>
+    <title>Blog</title>
+    <html lang="en">
+    <link rel="stylesheet" href="static/css/signup.css">
+</head>
+<body>
+
+    <header id="header" class="shadow bg-light">
+        <nav class="container navbar">
+            <a href="{{ url_for('index') }}" class="nav-blog text-dark">Blog</a>
+
+            <!-- collapse -->
+            <div class="collapse">
+                <ul class="navbar-nav">
+                    
+                    <a href="{{ url_for('index') }}" class="nav-link">Home</a>
+                    <a href="{{ url_for('login') }}" class="nav-link">Login</a>
+                    <a href="{{ url_for('profile') }}" class="nav-link">Proflie</a>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- .Header -->
+
+    <div class="log-container">
+        {% extends "layout.html" %}
+        {% block body %}
+        <h1>Signup</h1>
+        {% if error %}
+            <p class=error><strong>Error:</strong> {{ error }}</p>
+        {% endif %}
+        <form method="post">
+            {% if error %}
+            <p class=error><strong>Error:</strong> {{ error }}</p>
+            {% endif %}
+
+            <input type="text" id="firstname" placeholder="Firstname" name="firstname">
+
+            <input type="text" id="lastname" placeholder="Lastname" name="lastname">
+
+            <input type="date" id="birthdate" placeholder="Birthdate" name="bitrhdate">
+
+            <input type="text" id="username" placeholder="Username" name="username">
+            
+            <input type="password" id="password" placeholder="Password" name="password">
+
+            <input type="password" id="cpassword" placeholder="Confirm Password" name="cpassword">
+            
+            <input type="submit" class="rbtn" value="Signup">
+        </form>
+    </div>
+    {% endblock %}
+</body>
