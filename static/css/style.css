@@ -162,12 +162,31 @@ p{
 
 .cor1 .nb-link:hover{
     opacity: 1;
-    background-image: url('/static/images/coding-web-development-svgrepo-com-2 (1).svg');
+    background-image: url('/static/images/web-dev.svg');
     color: transparent;
 }
 .cor2 .nb-link:hover{
     opacity: 1;
-    background-image: url('/static/images/machine-learning-01-svgrepo-com (1).svg');
+    background-image: url('/static/images/machine-learning.svg');
     color: transparent;
 }
-
+.cor3 .nb-link:hover{
+    opacity: 1;
+    background-image: url('/static/images/blockchain.svg');
+    color: transparent;
+}
+.cor4 .nb-link:hover{
+    opacity: 1;
+    background-image: url('/static/images/data-science.svg');
+    color: transparent;
+}
+.cor5 .nb-link:hover{
+    opacity: 1;
+    background-image: url('/static/images/iot.svg');
+    color: transparent;
+}
+.cor6 .nb-link:hover{
+    opacity: 1;
+    background-image: url('/static/images/cyber-security.svg');
+    color: transparent;
+}
