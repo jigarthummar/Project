@@ -126,14 +126,15 @@ def blog():
         blog.append(x)
     return render_template('note.html', note=blog)
 
-@app.route('/input', methods=['GET', 'POST'])
+@app.route('/html')
 @login_required
-def input():
-    if request.method == 'POST':
-        username = request.cookies.get('username', '')
-        note.insert_one({'username':username ,'title':request.form['title'], 'note':request.form['post']})
-        return redirect(url_for('index'))
-    return render_template('input.html')
+def html():
+    if 'username' in session:
+        #username = session['username']
+        #note.insert_one({'username':username ,'title':request.form['title'], 'note':request.form['post']})
+        return render_template('webdev.html')
+    flash('Please log in', 'error')
+    return render_template('login.html')
     
 if __name__ == "__main__":
     app.run(debug=True)

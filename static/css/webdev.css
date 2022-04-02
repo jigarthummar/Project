@@ -65,6 +65,25 @@ p{
     
 }
 
+.basic
+{
+    background: linear-gradient(silver,gray);
+    border-radius: 1%;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding : 10px 10px;
+}
+
+.Intermediate
+{
+    margin-top: 20px;
+    background: linear-gradient(gray,black);
+    border-radius: 1%;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding : 10px 10px;
+}
+
 /* section styling */
 
 /* -------Navigation menu------- */
