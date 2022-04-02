@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Poppins&family=Roboto&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Poppins&family=Roboto&family=Roboto+Mono:wght@300&family=Ubuntu:wght@400;700&display=swap');
 
 /* root styling */
 
 :root{
     --light: #f8f9fa;
-    --secondary: #adb5bd;
+    --secondary: #d1dae4;
     --dark: #343a40;
-    --primary-color: rgb(129, 127, 246);
+    --primary-color: #ADB5BD;
+    --button-bg: #DEE2E6;
     --secondary-color: #2ec4b6;
     --border: #e9ecef;
 }
@@ -16,6 +16,7 @@ body{
     padding: 0;
     margin: 0;
     font-family: 'Roboto', sans-serif;
+    background-color: var(--light);
 }
 
 a{
@@ -46,13 +47,13 @@ p{
     color: var(--secondary);
 }
 .text-dark{
-    color: var(--dark);
+    color: var(--light);
 }
 .text-primary{
     color: var(--primary-color);
 }
 .bg-light{
-     background-color: var(--light);
+     background-color: var(--dark);
 }
 
 .container{
@@ -73,7 +74,7 @@ p{
 }
 
 .nav-blog{
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Roboto Mono', monospace;
     font-weight: bold;
     align-self: center;
     font-size: 32px;
@@ -89,7 +90,7 @@ p{
 .nav-link{
     font-size: 18px;
     margin: 12px;
-    color: var(--dark);
+    color: var(--light);
     font-family: 'Poppins', sans-serif;
 }
 
@@ -118,4 +119,55 @@ p{
 
 /*------ .main section ------*/
 
+.courses{
+    position: relative;
+    
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+.sec1{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+.sec2{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+
+
+.nb-link{
+    background-color: var(--button-bg);
+    color: var(--dark);
+    font-size: 15px;
+    padding-top: 6.5vw;
+    width: 20vw;
+    height: 15vw;
+    
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    border: 5px solid var(--dark);
+    margin-top: 10px;
+}
+
+.cor1 .nb-link:hover{
+    opacity: 1;
+    background-image: url('/static/images/coding-web-development-svgrepo-com-2 (1).svg');
+    color: transparent;
+}
+.cor2 .nb-link:hover{
+    opacity: 1;
+    background-image: url('/static/images/machine-learning-01-svgrepo-com (1).svg');
+    color: transparent;
+}
 

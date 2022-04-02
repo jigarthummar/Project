@@ -15,7 +15,7 @@
 
     <header id="header" class="shadow bg-light">
         <nav class="container navbar">
-            <a href="{{ url_for('index') }}" class="nav-blog text-dark">Code Scool</a>
+            <a href="{{ url_for('index') }}" class="nav-blog text-dark">Code'Scool</a>
 
             <!-- collapse -->
             <div class="collapse">
@@ -32,10 +32,18 @@
 
 
     <main id="public-story">
-        <section id="posts">
-            <div class="containor">
-                
-            </div>
+        <section class="courses" id="Courses">
+            <section class="sec1">
+                <div class="cor1"><a href="{{ url_for('input') }}" class="nb-link">Website developement</a></div>
+                <div class="cor2"><a href="{{ url_for('input') }}" class="nb-link">Machine learning</a></div>
+                <div class="cor3"><a href="{{ url_for('input') }}" class="nb-link">Blockchain</a></div>
+            </section>
+            <section class="sec2">
+                <div class="cor4"><a href="{{ url_for('input') }}" class="nb-link">Data Science</a></div>
+                <div class="cor5"><a href="{{ url_for('input') }}" class="nb-link">Internet of Things</a></div>
+                <div class="cor6"><a href="{{ url_for('input') }}" class="nb-link">SE</a></div>
+            </section>
+
         </section>
     </main>
 

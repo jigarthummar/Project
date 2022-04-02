@@ -1,24 +1,28 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>input</title>
+    <title>Blog</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font awesome icons cdn-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- css -->
-    <link rel="stylesheet" href="/static/css/input.css">
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-    <!-- Header -->
+
     <header id="header" class="shadow bg-light">
         <nav class="container navbar">
-            <a href="{{ url_for('index') }}" class="nav-blog text-dark">Code Scool</a>
+            <a href="{{ url_for('index') }}" class="nav-blog text-dark">Code'Scool</a>
 
             <!-- collapse -->
             <div class="collapse">
                 <ul class="navbar-nav">
-                    <a href="{{ url_for('index') }}" class="nav-link">Home</a>
-                    
-                    <a href="{{ url_for('profile') }}" class="nav-link">Profile</a>
+                    <a href="#" class="nav-link">Home</a>
+                    <a href="{{ url_for('signout') }}" class="nav-link">Logout</a>
+                    <a href="{{ url_for('profile') }}" class="nav-link">Proflie</a>
 
                 </ul>
             </div>
@@ -26,29 +30,25 @@
     </header>
     <!-- .Header -->
 
-    <!-- Public story section -->
-    <main id="public-story"> 
-        <section id="posts">
-            <div class="containor">
-                <form method="post">
-                    <div class="title">
-                        <input type="text" placeholder="Title" name="title" id="title" required >
-                    </div>
-                    <hr>
-                    <div class="blog">
-                        <textarea id="story" name="post" placeholder="Write story here.." required></textarea>
-                        <hr>
-                        <button id="btnSubmit" class="rbtn" onclick = 'this.form.submit();' type="button">Submit</button>
-                    </div>
-                </form>
-            </div>
+
+    <main id="public-story">
+        <section class="courses" id="Courses">
+            <section class="sec1">
+                <div class="cor1"><a href="{{ url_for('input') }}" class="nb-link">Website developement</a></div>
+                <div class="cor2"><a href="{{ url_for('input') }}" class="nb-link">Machine learning</a></div>
+                <div class="cor3"><a href="{{ url_for('input') }}" class="nb-link">Blockchain</a></div>
+            </section>
+            <section class="sec2">
+                <div class="cor4"><a href="{{ url_for('input') }}" class="nb-link">Data Science</a></div>
+                <div class="cor5"><a href="{{ url_for('input') }}" class="nb-link">Internet of Things</a></div>
+                <div class="cor6"><a href="{{ url_for('input') }}" class="nb-link">SE</a></div>
+            </section>
+
         </section>
     </main>
-    <!-- .public story section -->
 
 
 
 
-    
 </body>
 </html>
