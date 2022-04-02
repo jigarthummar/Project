@@ -10,9 +10,10 @@ app.config['SECRET_KEY'] = '1234login'
 client = MongoClient('mongodb://localhost:27017/')
 db = client['Project']
 collection = db['UserData']
+user_coll = db['History']
+study_coll = db['Videos']
 note = db['note']
 S=10
-main_user = ""
 
 def is_authenticated(request):
     username = request.cookies.get('username', '')
@@ -126,15 +127,37 @@ def blog():
         blog.append(x)
     return render_template('note.html', note=blog)
 
-@app.route('/html')
+@app.route('/wd')
 @login_required
-def html():
+def wd():
     if 'username' in session:
+        """study_coll.insert_one({
+                        'Number' : 2,
+                        'Course': "html",
+                        'Link': 'https://www.youtube.com/embed/qz0aGYrrlhU'
+                    })"""
         #username = session['username']
         #note.insert_one({'username':username ,'title':request.form['title'], 'note':request.form['post']})
-        return render_template('webdev.html')
+        html_videos = study_coll.find({'Course' : "html"})
+        css_videos = study_coll.find({'Course' : "css"})
+        js_videos = study_coll.find({'Course' : "js"})
+        return render_template('webdev.html', 
+                                hvideos = html_videos,
+                                cvideos = css_videos,
+                                jvideos = js_videos)
     flash('Please log in', 'error')
     return render_template('login.html')
+
+@app.route('/wd', methods = ['GET','POST'])
+@login_required
+def record_wd():
+    if 'username' in session:
+        user_coll.insert_one({
+                        'username': session['username'],
+                        'Link': request.form['first']
+                    })
+    return render_template('webdev.html')
+
     
 if __name__ == "__main__":
     app.run(debug=True)
