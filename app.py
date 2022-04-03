@@ -56,6 +56,15 @@ def profile():
         bdate = user['Birthdate']
         )
     return redirect(url_for('login'))
+
+
+
+@app.route('/admin',method=['POST'])
+@login_required
+def admin():
+    if request.method == 'POST':
+        
+    return render_template('admin.html')
     
 
 @app.route('/login',methods=['GET', 'POST'])
@@ -79,6 +88,10 @@ def login():
                     flash('Username or password is invalid', 'error')  
             else:
                 flash('Username or password is invalid', 'error')
+        elif username == "admin":
+            if password == "Code'School":
+                session['username'] = "admin"
+                return render_template('admin.html')
         else:
             flash('Username or password is invalid!', 'error')
 
@@ -89,6 +102,9 @@ def signup():
     if request.method == 'POST':
         user = collection.find_one({'username':request.form['username']})
         if user:
+            flash('Username is already existed', 'error')
+            return render_template("signup.html")
+        elif request.form['username'] == "admin":
             flash('Username is already existed', 'error')
             return render_template("signup.html")
         else:
@@ -119,13 +135,7 @@ def signout():
     session.pop('username',None)
     return response
 
-@app.route('/blog', methods=['GET', 'POST'])
-def blog():
-    blog = []
-    cursor = note.find({},{'_id': False})
-    for x in cursor:
-        blog.append(x)
-    return render_template('note.html', note=blog)
+
 
 @app.route('/wd')
 @login_required

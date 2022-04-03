@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Poppins&family=Roboto&family=Ubuntu:wght@400;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Poppins&family=Roboto&family=Roboto+Mono:wght@300&family=Ubuntu:wght@400;700&display=swap');
 
 /* root styling */
 
 :root{
     --light: #f8f9fa;
-    --secondary: #adb5bd;
+    --secondary: #d1dae4;
     --dark: #343a40;
-    --primary-color: rgb(129, 127, 246);
+    --primary-color: #ADB5BD;
+    --button-bg: #DEE2E6;
     --secondary-color: #2ec4b6;
     --border: #e9ecef;
 }
@@ -16,10 +16,17 @@ body{
     padding: 0;
     margin: 0;
     font-family: 'Roboto', sans-serif;
+    background-color: var(--light);
 }
 
 a{
     text-decoration: none;
+}
+
+
+p{
+    color: black;
+    font-family: 'Roboto', sans-serif;
 }
 
 *>*{
@@ -35,13 +42,13 @@ a{
     color: var(--secondary);
 }
 .text-dark{
-    color: var(--dark);
+    color: var(--light);
 }
 .text-primary{
     color: var(--primary-color);
 }
 .bg-light{
-     background-color: var(--light);
+     background-color: var(--dark);
 }
 
 .container{
@@ -62,7 +69,7 @@ a{
 }
 
 .nav-blog{
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Roboto Mono', monospace;
     font-weight: bold;
     align-self: center;
     font-size: 32px;
@@ -78,16 +85,13 @@ a{
 .nav-link{
     font-size: 18px;
     margin: 12px;
-    color: var(--dark);
+    color: var(--light);
     font-family: 'Poppins', sans-serif;
 }
 
 .nav-link:hover{
     color: var(--primary-color);
 }
-
-
-
 /*------ main section ------*/
 
 .log-container{
@@ -100,8 +104,9 @@ a{
 }
 h1{
     text-align: center;
-    color:#403866;
+    color:var(--dark);
     text-transform: uppercase;
+    
 }
 .da{
     
@@ -137,7 +142,7 @@ input[type='email']:focus{
    outline: none;
 }
 .rbtn{
-    background-color: var(--primary-color);
+    background-color: var(--dark);
     color: white;
     font-size: 20px;
     padding: 16px;
@@ -156,7 +161,8 @@ input[type='email']:focus{
  }
  .rbtn:hover{
     opacity: 1;
-    background-color: #403866;
+    background-color: var(--dark);
+    color: var(--light);
     
 
  }

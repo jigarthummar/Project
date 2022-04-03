@@ -22,15 +22,61 @@ body{
 a{
     text-decoration: none;
 }
-table{
-    font-size: 17px;
-    margin-bottom: 25px;
+
+h4{
+    color: #403866;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: underline;
+    text-transform: uppercase;
 }
-h3{
-    font-family: 'DM Sans', sans-serif;
-    font-weight: bold;
+p{
+    color: black;
+    font-family: 'Roboto', sans-serif;
+}
+input[type='text']{
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0px 5px 0px;
+    display: inline-block;
+    border: 5px solid var(--dark);
+    border-radius: 5px;
+    line-height: 1.2;
+    background-color: rgb(230,230,230);
+    font-family: 'Ubuntu', sans-serif;
     font-size: 20px;
-    padding-left: 10px;
+    height: 62px;
+}
+input[type='submit']{
+    color: var(--light);
+    width: 25%;
+    padding: 15px;
+    margin: 10px 0px 5px 0px;
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    line-height: 1.2;
+    background-color: var(--dark);
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    height: 62px;
+}
+input[type='submit']:hover{
+    color: var(--dark);
+    background-color: var(--button-bg);
+    border: 5px solid var(--dark);
+}
+select{
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0px 5px 0px;
+    display: inline-block;
+    border: 5px solid var(--dark);
+    
+    line-height: 1.2;
+    background-color: rgb(230,230,230);
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    height: 62px;
 }
 
 *>*{
@@ -97,19 +143,6 @@ h3{
     color: var(--primary-color);
 }
 
-.newimg{
-    background-image: url(/static/images/avatar.svg);
-    opacity: 0.9;
-    position: absolute;
-    width: 170px;
-    height: 170px;
-    border-radius: 50%;
-
-    display: flex;
-    margin-left:50%;
-    color: transparent;
-    object-fit: cover;
-}
 
 
 /* -------.Navigation menu------- */
@@ -117,45 +150,24 @@ h3{
 
 /*------ main section ------*/
 
-#your-story{
-    margin-top: 5em;
-    margin-left: 15em;
+#main-sec{
+    margin-top: 50px;
+    margin-left:10%;
+    margin-right:10%;
 }
-.profile{
-    margin: auto;
-    position:relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 10px;
-}
-.nb-link{
-    background-color: var(--dark);
-    color: var(--light);
-    font-size: 15px;
-    padding: 16px;
-    width:20%;
-    border-radius: 5px;
-    line-height: 1.2;
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: bold;
-    opacity: 0.8;
-    display: block;
-    font-family: 'Ubuntu', sans-serif;
-    border: none;
-    margin-top: 10px;
-}
-
-.nb-link:hover{
-    opacity: 1;
-    background-color: var(--dark);
-    color: var(--light);
-}
-
 
 
 
 /*------ .main section ------*/
+
+.courses{
+    position: relative;
+    
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+
 
 

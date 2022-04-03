@@ -24,10 +24,10 @@ a{
 }
 
 h1{
-    margin-left: 10px;
+    
     color: #212529;
     font-family: 'Roboto', sans-serif;
-    text-decoration: underline;
+    
     text-transform: uppercase;
 }
 p{
@@ -65,14 +65,7 @@ p{
     
 }
 
-.basic
-{
-    background: linear-gradient(silver,gray);
-    border-radius: 1%;
-    margin-left: 10%;
-    margin-right: 10%;
-    padding : 10px 10px;
-}
+
 
 input[type='button']
 {
@@ -80,15 +73,7 @@ input[type='button']
     height:"187";
 }
 
-.Intermediate
-{
-    margin-top: 20px;
-    background: linear-gradient(gray,black);
-    border-radius: 1%;
-    margin-left: 10%;
-    margin-right: 10%;
-    padding : 10px 10px;
-}
+
 
 /* section styling */
 
@@ -139,10 +124,17 @@ input[type='button']
 
 #public-story{
     margin-top: 10px;
-    
+    margin-left: 60px;
+    margin-right: 60px;
     
 }
-
+.basic{
+    border: 5px solid var(--dark);
+    
+}
+.section{
+    margin: 10px;
+}
 
 
 /*------ .main section ------*/
@@ -158,11 +150,13 @@ input[type='button']
 
 
 .scrolling-wrapper {
-    background-color: #333;
+    background-color: var(--primary-color);
     display: flex;
-    flex-wrap: no-wrap;
+    flex-wrap: nowrap;
     overflow-x: auto;
-    margin: 10px;
+    width: 1320px;
+    margin-top: 10px;
+    border: 5px solid var(--dark);
 }
   
 .scrolling-wrapper iframe {
@@ -171,7 +165,7 @@ input[type='button']
     height: auto;
     max-width: 100%;
     margin-right: 10px;
-    display: inline-block;
+    
     padding: 14px;
 }
 .scrolling-wrapper iframe:hover {
