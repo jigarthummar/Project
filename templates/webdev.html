@@ -67,6 +67,52 @@
                         </iframe>
                     {% endfor %}    
                 </div>
+
+                <h1>Node Js</h1><a href = "https://devdocs.io/javascript">(Documentation)</a>
+                <div class="scrolling-wrapper">
+                    {% for video in njvideos %}
+                        <iframe width="325" height="187" 
+                        src={{ video['Link'] }} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                        </iframe>
+                    {% endfor %}    
+                </div>
+            </div>
+
+            <div class="advance">
+            
+                <h1>PostgreSQL</h1><a href = "https://devdocs.io/javascript">(Documentation)</a>
+                <div class="scrolling-wrapper">
+                    {% for video in dbvideos %}
+                        <iframe width="325" height="187" 
+                        src={{ video['Link'] }} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                        </iframe>
+                    {% endfor %}    
+                </div>
+
+                <h1>React</h1><a href = "https://devdocs.io/javascript">(Documentation)</a>
+                <div class="scrolling-wrapper">
+                    {% for video in revideos %}
+                        <iframe width="325" height="187" 
+                        src={{ video['Link'] }} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                        </iframe>
+                    {% endfor %}    
+                </div>
+            </div>
+
+            <div class="advance">
+            
+                <h1>Projects</h1><a href = "https://devdocs.io/javascript">(Documentation)</a>
+                <div class="scrolling-wrapper">
+                    {% for video in project %}
+                        <iframe width="325" height="187" 
+                        src={{ video['Link'] }} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                        </iframe>
+                    {% endfor %}    
+                </div>
             </div>
             
         </section>

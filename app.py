@@ -1,3 +1,4 @@
+from email import message
 from flask import Flask, render_template ,redirect, url_for, session, request, make_response,flash,url_for,send_from_directory,jsonify
 from pymongo import MongoClient
 from functools import wraps
@@ -46,7 +47,9 @@ def index():
 @app.route('/profile/')
 @login_required
 def profile():
-    if 'username' in session:
+    if session['username'] == 'admin':
+        return render_template('admin.html')
+    elif 'username' in session:
         user = collection.find_one({'username': session['username']})
         return render_template('profile.html',
         fname = user['FirstName'],
@@ -59,11 +62,22 @@ def profile():
 
 
 
-@app.route('/admin',method=['POST'])
+@app.route('/admin',methods=['POST'])
 @login_required
 def admin():
     if request.method == 'POST':
-        
+        Course = request.form.get('webdev')
+        if Course != "None":
+            link = request.form.get('w_link')
+            study_coll.insert_one({
+                        'Number' : 4,
+                        'Course': str(Course),
+                        'Link': link
+                    })
+            return render_template('admin.html',message = "Success")
+    else:
+        return "eroor"
+
     return render_template('admin.html')
     
 
@@ -80,6 +94,8 @@ def login():
                     random_string = ''.join(random.choices(string.ascii_uppercase + string.digits, k = S)) 
                     session_token = random_string
                     response = make_response(redirect(url_for('profile')))
+                    if username == "admin":
+                        response = make_response(render_template('admin.html'))
                     response.set_cookie(key='username',value=username)
                     response.set_cookie(key='token',value=session_token)
                     collection.update_one({'username':username},{'$set':{'token':session_token}})
@@ -87,11 +103,7 @@ def login():
                 else:
                     flash('Username or password is invalid', 'error')  
             else:
-                flash('Username or password is invalid', 'error')
-        elif username == "admin":
-            if password == "Code'School":
-                session['username'] = "admin"
-                return render_template('admin.html')
+                flash('Username or password is invalid', 'error') 
         else:
             flash('Username or password is invalid!', 'error')
 
@@ -141,20 +153,18 @@ def signout():
 @login_required
 def wd():
     if 'username' in session:
-        """study_coll.insert_one({
-                        'Number' : 2,
-                        'Course': "html",
-                        'Link': 'https://www.youtube.com/embed/qz0aGYrrlhU'
-                    })"""
-        #username = session['username']
-        #note.insert_one({'username':username ,'title':request.form['title'], 'note':request.form['post']})
         html_videos = study_coll.find({'Course' : "html"})
         css_videos = study_coll.find({'Course' : "css"})
         js_videos = study_coll.find({'Course' : "js"})
+        njs_videos = study_coll.find({'Course' : "njs"})
+        db_videos = study_coll.find({'Course' : "dbms"})
+        re_videos = study_coll.find({'Course' : "react"})
+        pr_videos = study_coll.find({'Course' : "w_project"})
         return render_template('webdev.html', 
-                                hvideos = html_videos,
-                                cvideos = css_videos,
-                                jvideos = js_videos)
+                                hvideos = html_videos,cvideos = css_videos,
+                                jvideos = js_videos,njvideos = njs_videos,
+                                dbvideos = db_videos, revideos = re_videos,
+                                project = pr_videos)
     flash('Please log in', 'error')
     return render_template('login.html')
 

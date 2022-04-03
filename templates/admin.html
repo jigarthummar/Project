@@ -29,9 +29,27 @@
     </header>
     <!-- .Header -->
     <main id="main-sec">
+        <h1> {{ message }} </h1>
         <section class="courses" id="Courses">
-            <form class="cor1" method="post">
-                <h2>Web developrment</h2> <select name="html" id="html">
+            <form class="cor1" method="post" action = "{{ url_for('admin') }}">
+                <h2>Web developrment</h2> 
+                <select name="webdev" id="webdev">
+                    <option value="None">--Please choose an option--</option>
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="js">Java Script</option>
+                    <option value="njs">Node Js</option>
+                    <option value="dbms">PostgreSQL</option>
+                    <option value="react">React</option>
+                    <option value="w_project">Project</option>
+                </select>
+                <input type="text" id="w_link" placeholder="Enter link here" name="w_link">
+                <input type="submit" id= "w_submit" value="Submit">
+            
+            <hr>
+            
+                <h2>Machine learning</h2> 
+                <select name="ml" id="ml">
                     <option value="">--Please choose an option--</option>
                     <option value="dog">HTML</option>
                     <option value="cat">CSS</option>
@@ -40,12 +58,28 @@
                     <option value="spider">Spider</option>
                     <option value="goldfish">Goldfish</option>
                 </select>
-                <input type="text" id="link" placeholder="Enter link here" name="link">
+                <input type="text" id="m_link" placeholder="Enter link here" name="m_link">
+                <input type="submit" id= "submit" value="Submit">
+            
+            <hr>
+            
+                <h2>Blockchain</h2> 
+                <select name="bc" id="bc">
+                    <option value="">--Please choose an option--</option>
+                    <option value="dog">HTML</option>
+                    <option value="cat">CSS</option>
+                    <option value="hamster">Java Screept</option>
+                    <option value="parrot">Parrot</option>
+                    <option value="spider">Spider</option>
+                    <option value="goldfish">Goldfish</option>
+                </select>
+                <input type="text" id="b_link" placeholder="Enter link here" name="b_link">
                 <input type="submit" id= "submit" value="Submit">
             </form>
             <hr>
-            <form class="cor2">
-                <h2>Machine learning</h2> <select name="html" id="html">
+            
+                <h2>Data Science</h2> 
+                <select name="ds" id="ds">
                     <option value="">--Please choose an option--</option>
                     <option value="dog">HTML</option>
                     <option value="cat">CSS</option>
@@ -54,12 +88,13 @@
                     <option value="spider">Spider</option>
                     <option value="goldfish">Goldfish</option>
                 </select>
-                <input type="text" id="link" placeholder="Enter link here" name="web-link">
+                <input type="text" id="d_link" placeholder="Enter link here" name="d_link">
                 <input type="submit" id= "submit" value="Submit">
-            </form>
+            
             <hr>
-            <form class="cor3">
-                <h2>Blockchain</h2> <select name="html" id="html">
+            
+                <h2>Internet of Things</h2> 
+                <select name="iot" id="iot">
                     <option value="">--Please choose an option--</option>
                     <option value="dog">HTML</option>
                     <option value="cat">CSS</option>
@@ -68,12 +103,13 @@
                     <option value="spider">Spider</option>
                     <option value="goldfish">Goldfish</option>
                 </select>
-                <input type="text" id="link" placeholder="Enter link here" name="link">
+                <input type="text" id="i_link" placeholder="Enter link here" name="i_link">
                 <input type="submit" id= "submit" value="Submit">
-            </form>
+            
             <hr>
-            <form class="cor4">
-                <h2>Data Science</h2> <select name="html" id="html">
+            
+                <h2>Cyber Security</h2> 
+                <select name="cs" id="cs">
                     <option value="">--Please choose an option--</option>
                     <option value="dog">HTML</option>
                     <option value="cat">CSS</option>
@@ -82,35 +118,7 @@
                     <option value="spider">Spider</option>
                     <option value="goldfish">Goldfish</option>
                 </select>
-                <input type="text" id="link" placeholder="Enter link here" name="link">
-                <input type="submit" id= "submit" value="Submit">
-            </form>
-            <hr>
-            <form class="cor4">
-                <h2>Internet of Things</h2> <select name="html" id="html">
-                    <option value="">--Please choose an option--</option>
-                    <option value="dog">HTML</option>
-                    <option value="cat">CSS</option>
-                    <option value="hamster">Java Screept</option>
-                    <option value="parrot">Parrot</option>
-                    <option value="spider">Spider</option>
-                    <option value="goldfish">Goldfish</option>
-                </select>
-                <input type="text" id="link" placeholder="Enter link here" name="link">
-                <input type="submit" id= "submit" value="Submit">
-            </form>
-            <hr>
-            <form class="cor6">
-                <h2>Cyber Security</h2> <select name="html" id="html">
-                    <option value="">--Please choose an option--</option>
-                    <option value="dog">HTML</option>
-                    <option value="cat">CSS</option>
-                    <option value="hamster">Java Screept</option>
-                    <option value="parrot">Parrot</option>
-                    <option value="spider">Spider</option>
-                    <option value="goldfish">Goldfish</option>
-                </select>
-                <input type="text" id="link" placeholder="Enter link here" name="link">
+                <input type="text" id="c_link" placeholder="Enter link here" name="c_link">
                 <input type="submit" id= "submit" value="Submit">
             </form>
             <hr>
