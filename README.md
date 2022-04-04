@@ -35,6 +35,6 @@ The project lets anyone signup and use the content to learn new skills and have 
 - `/cs` - Opens Cyber Security
 - `/signout` - Logs user Out
 
-## How to run the Web Application
+## For running our website
 
 `python app.py`
