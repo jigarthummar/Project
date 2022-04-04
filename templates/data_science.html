@@ -41,7 +41,7 @@
                 <div class="section">
                     <h1>Excel and Statistics</h1><a href = "https://www.excel-easy.com">(Reference)</a>
                     <div class="scrolling-wrapper">
-                        {% for video in hvideos %}
+                        {% for video in evideos %}
                             <iframe width="325" height="187" 
                             src={{ video['Link'] }} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
@@ -71,12 +71,12 @@
                 </div>
             </div>
                 
-            <h1> Machine Learning </h1>
+            <h1> Machine Learning Concepts </h1>
             <div class="advance">
                 <div class="section">
                     <a href = "https://www.amazon.com/Python-Machine-Learning-scikit-learn-TensorFlow/dp/1789955750/ref=sr_1_1?keywords=9781789958294&linkCode=qs&qid=1649079446&s=books&sr=1-1">(Books)</a>
                     <div class="scrolling-wrapper">
-                        {% for video in dbvideos %}
+                        {% for video in mlvideos %}
                             <iframe width="325" height="187" 
                             src={{ video['Link'] }} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
@@ -106,7 +106,7 @@
                 <div class="section">
                     <h1>MongoDB</h1><a href = "https://www.mongodb.com/docs/">(Documentation)</a>
                     <div class="scrolling-wrapper">
-                        {% for video in project %}
+                        {% for video in dbvideos %}
                             <iframe width="325" height="187" 
                             src={{ video['Link'] }} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
@@ -120,7 +120,7 @@
             <div class="practice">
                 <div class="section">
                     <div class="scrolling-wrapper">
-                        {% for video in project %}
+                        {% for video in bvideos %}
                             <iframe width="325" height="187" 
                             src={{ video['Link'] }} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>

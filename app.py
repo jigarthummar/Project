@@ -106,6 +106,26 @@ def admin():
                     })
             return render_template('admin.html',message = "Success")
 
+        Course = request.form.get('cs')
+        if Course != "None":
+            link = request.form.get('c_link')
+            study_coll.insert_one({
+                        'Number' : 4,
+                        'Course': str(Course),
+                        'Link': link
+                    })
+            return render_template('admin.html',message = "Success")
+
+        Course = request.form.get('ds')
+        if Course != "None":
+            link = request.form.get('d_link')
+            study_coll.insert_one({
+                        'Number' : 4,
+                        'Course': str(Course),
+                        'Link': link
+                    })
+            return render_template('admin.html',message = "Success")
+
     return render_template('admin.html')
     
 
@@ -280,6 +300,26 @@ def cs():
                                 cbpvideos = cbp_videos,
                                 sbpvideos = sbp_videos,
                                 cnvideos = cn_videos)
+    flash('Please log in', 'error')
+    return render_template('login.html')
+
+@app.route('/ds')
+@login_required
+def ds():
+    if 'username' in session:
+        excel_videos = study_coll.find({'Course' : "es"})
+        lib_videos = study_coll.find({'Course' : "lib"})
+        ml_videos = study_coll.find({'Course' : "mlc"})
+        dlc_videos = study_coll.find({'Course' : "dlc"})
+        db_videos = study_coll.find({'Course' : "mongo"})
+        b_videos = study_coll.find({'Course' : "btools"})
+        return render_template('data_science.html', 
+                                evideos = excel_videos,
+                                lvideos = lib_videos,
+                                mlvideos = ml_videos,
+                                dlcvideos = dlc_videos,
+                                dbvideos = db_videos,
+                                bvideos = b_videos)
     flash('Please log in', 'error')
     return render_template('login.html')
 
