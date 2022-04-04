@@ -177,7 +177,7 @@ p{
 }
 .cor5 .nb-link:hover{
     opacity: 1;
-    background-image: url('/static/images/iot.svg');
+    background-image: url('/static/images/languages.svg');
     color: transparent;
 }
 .cor6 .nb-link:hover{

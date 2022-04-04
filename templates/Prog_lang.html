@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Blog</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font awesome icons cdn-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="/static/css/webdev.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="header" class="shadow bg-light">
+        <nav class="container navbar">
+            <a href="{{ url_for('index') }}" class="nav-blog text-dark">Code'Scool</a>
+
+            
+            <div class="collapse">
+                <ul class="navbar-nav">
+                    <a href="{{ url_for('index') }}" class="nav-link">Home</a>
+                    
+                    <a href="{{ url_for('profile') }}" class="nav-link">Proflie</a>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- .Header -->
+
+
+    <main id="public-story">
+        <section class="courses" id="Courses">
+            <h1 style="text-decoration: underline;">Programming Languages</h1>           
+            <div class="section">
+                <h1>C</h1><a href = "https://devdocs.io/c/">(Documentation)</a>
+                <div class="scrolling-wrapper">
+                    {% for video in hvideos %}
+                        <iframe width="325" height="187" 
+                        src={{ video['Link'] }} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                        </iframe>
+                    {% endfor %}
+                </div>                
+            </div> 
+            <hr>
+            <div class="section">
+                <h1>C++</h1><a href = "https://devdocs.io/cpp/">(Documentation)</a>
+                <div class="scrolling-wrapper">
+                    {% for video in hvideos %}
+                        <iframe width="325" height="187" 
+                        src={{ video['Link'] }} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                        </iframe>
+                    {% endfor %}
+                </div>                
+            </div> 
+            <hr>
+            <div class="section">
+                <h1>Java</h1><a href = "https://docs.oracle.com/en/java/">(Documentation)</a>
+                <div class="scrolling-wrapper">
+                    {% for video in hvideos %}
+                        <iframe width="325" height="187" 
+                        src={{ video['Link'] }} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                        </iframe>
+                    {% endfor %}
+                </div>                
+            </div>  
+            <hr>
+            <div class="section">
+                <h1>Python</h1><a href = "https://docs.python.org/3/">(Documentation)</a>
+                <div class="scrolling-wrapper">
+                    {% for video in hvideos %}
+                        <iframe width="325" height="187" 
+                        src={{ video['Link'] }} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                        </iframe>
+                    {% endfor %}
+                </div>                
+            </div> 
+            <hr>
+            <div class="section">
+                <h1>Javascript</h1><a href = "https://developer.mozilla.org/en-US/docs/Web/JavaScript">(Documentation)</a>
+                <div class="scrolling-wrapper">
+                    {% for video in hvideos %}
+                        <iframe width="325" height="187" 
+                        src={{ video['Link'] }} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                        </iframe>
+                    {% endfor %}
+                </div>                
+            </div> 
+            <hr>
+            <div class="section">
+                <h1>Swift</h1><a href = "https://www.swift.org/documentation/">(Documentation)</a>
+                <div class="scrolling-wrapper">
+                    {% for video in hvideos %}
+                        <iframe width="325" height="187" 
+                        src={{ video['Link'] }} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                        </iframe>
+                    {% endfor %}
+                </div>                
+            </div> 
+            <hr>
+            <div class="section">
+                <h1>Go</h1><a href = "https://go.dev/doc/">(Documentation)</a>
+                <div class="scrolling-wrapper">
+                    {% for video in hvideos %}
+                        <iframe width="325" height="187" 
+                        src={{ video['Link'] }} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                        </iframe>
+                    {% endfor %}
+                </div>                
+            </div> 
+        </section>
+    </main>
+</body>
+</html>

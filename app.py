@@ -76,6 +76,26 @@ def admin():
                     })
             return render_template('admin.html',message = "Success")
 
+        Course = request.form.get('ml')
+        if Course != "None":
+            link = request.form.get('m_link')
+            study_coll.insert_one({
+                        'Number' : 4,
+                        'Course': str(Course),
+                        'Link': link
+                    })
+            return render_template('admin.html',message = "Success")
+        
+        Course = request.form.get('bc')
+        if Course != "None":
+            link = request.form.get('b_link')
+            study_coll.insert_one({
+                        'Number' : 4,
+                        'Course': str(Course),
+                        'Link': link
+                    })
+            return render_template('admin.html',message = "Success")
+
     return render_template('admin.html')
     
 

@@ -1,7 +1,8 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Blockchain</title>
+    <title>Blog</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,94 +34,99 @@
 
     <main id="public-story">
         <section class="courses" id="Courses">
-            <h1 style="text-decoration: underline;">Blockchain</h1>
-            <h1>Basic </h1>
+            
+            <h1 style="text-decoration: underline;">Data Science</h1>
+            <h1>Basic</h1>
             <div class="basic">
                 <div class="section">
-                    <h1>Blockchain</h1>
+                    <h1>Excel and Statistics</h1><a href = "https://www.excel-easy.com">(Reference)</a>
                     <div class="scrolling-wrapper">
-                        {% for video in bvideos %}
+                        {% for video in hvideos %}
                             <iframe width="325" height="187" 
                             src={{ video['Link'] }} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                             </iframe>
                         {% endfor %}
                     </div>
-
-                    <h1>Tools you need</h1>
-                    <div class="scrolling-wrapper">
-                        {% for video in tvideos %}
-                            <iframe width="325" height="187" 
-                            src={{ video['Link'] }} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                            </iframe>
-                        {% endfor %}
-                    </div>
+                   
+                    
                 </div>
             </div>
-            <h1> Languages to learn </h1>
+            <h1> Libraries </h1>
             <div class="intermedite">
-                
                 <div class="section">
-                    <h1> Solidity </h1><a href = "https://docs.soliditylang.org/en/v0.8.13/">(Documentation)</a>
+                    <h1>Numpy/Pandas/Matplotlib</h1>
+                    <a href = "https://numpy.org/doc/">(numpy(doc)/</a>
+                    <a href = "https://pandas.pydata.org/docs/">Pandas(doc)/</a>
+                    <a href = "https://matplotlib.org/stable/">(Matplotlib(doc))</a>
                     <div class="scrolling-wrapper">
-                        {% for video in svideos %}
+                        {% for video in lvideos %}
                             <iframe width="325" height="187" 
                             src={{ video['Link'] }} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                             </iframe>
                         {% endfor %}    
                     </div>
-                    <h1>JavaScript</h1><a href = "https://devdocs.io/javascript">(Documentation)</a>
-                    <div class="scrolling-wrapper">
-                        {% for video in jvideos %}
-                            <iframe width="325" height="187" 
-                            src={{ video['Link'] }} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                            </iframe>
-                        {% endfor %}    
-                    </div>
+                
                 </div>
             </div>
-            <h1> Frameworks & libraries </h1>
+                
+            <h1> Machine Learning </h1>
             <div class="advance">
                 <div class="section">
-                    <h1>React</h1><a href = "https://reactjs.org/docs/getting-started.html">(Documentation)</a>
+                    <a href = "https://www.amazon.com/Python-Machine-Learning-scikit-learn-TensorFlow/dp/1789955750/ref=sr_1_1?keywords=9781789958294&linkCode=qs&qid=1649079446&s=books&sr=1-1">(Books)</a>
                     <div class="scrolling-wrapper">
-                        {% for video in revideos %}
+                        {% for video in dbvideos %}
                             <iframe width="325" height="187" 
                             src={{ video['Link'] }} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                             </iframe>
                         {% endfor %}    
                     </div>
-                    <h1>Node Js</h1><a href = "https://nodejs.org/en/docs/">(Documentation)</a>
+                </div>
+            </div>
+            <h1> Deep learning concepts </h1>
+            <div class="advance">
+                <div class="section">
+                    <h1>Tensorflow/Keras</h1>
+                    <a href = "https://www.tensorflow.org/api_docs">(Tensorflow(doc)/</a>
+                    <a href = "https://keras.io/api/">(Keras(doc))</a>
                     <div class="scrolling-wrapper">
-                        {% for video in njvideos %}
+                        {% for video in dlcvideos %}
                             <iframe width="325" height="187" 
                             src={{ video['Link'] }} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                             </iframe>
                         {% endfor %}    
                     </div>
-                    <h1>Web3js</h1><a href = "https://web3js.readthedocs.io/en/v1.7.1/">(Documentation)</a>
+                </div>
+            </div>
+            <h1> Databases</h1>
+            <div class="practice">
+                <div class="section">
+                    <h1>MongoDB</h1><a href = "https://www.mongodb.com/docs/">(Documentation)</a>
                     <div class="scrolling-wrapper">
-                        {% for video in wbvideos %}
+                        {% for video in project %}
                             <iframe width="325" height="187" 
                             src={{ video['Link'] }} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                             </iframe>
                         {% endfor %}    
                     </div>
-
-                    
                 </div>
             </div>
 
-            <div class="practiceb">
+            <h1> Bi tools</h1>
+            <div class="practice">
                 <div class="section">
-                    <a href = "{{ url_for('wd') }}">(Webdev)</a>
-                    
+                    <div class="scrolling-wrapper">
+                        {% for video in project %}
+                            <iframe width="325" height="187" 
+                            src={{ video['Link'] }} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                            </iframe>
+                        {% endfor %}    
+                        </div>
                 </div>
             </div>
             

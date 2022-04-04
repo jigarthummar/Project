@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Blog</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font awesome icons cdn-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="/static/css/webdev.css">
+</head>
+<body>
+
+    <header id="header" class="shadow bg-light">
+        <nav class="container navbar">
+            <a href="{{ url_for('index') }}" class="nav-blog text-dark">Code'Scool</a>
+
+            <!-- collapse -->
+            <div class="collapse">
+                <ul class="navbar-nav">
+                    <a href="{{ url_for('index') }}" class="nav-link">Home</a>
+                    
+                    <a href="{{ url_for('profile') }}" class="nav-link">Proflie</a>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- .Header -->
+
+
+    <main id="public-story">
+        <section class="courses" id="Courses">
+            <h1 style="text-decoration: underline;">Cyber Security</h1>
+            <h1>Virtual Machine</h1>
+            <div class="basic">
+                <div class="section">
+                    <h1>Hypervisor</h1>
+                    <div class="scrolling-wrapper">
+                        {% for video in hvideos %}
+                            <iframe width="325" height="187" 
+                            src={{ video['Link'] }} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                            </iframe>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            
+            <h1> Command Line </h1>
+            <div class="basic">
+                <div class="section">
+                    <h1>Bash/Powershell</h1>
+                    <div class="scrolling-wrapper">
+                        {% for video in hvideos %}
+                            <iframe width="325" height="187" 
+                            src={{ video['Link'] }} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                            </iframe>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+           
+            <h1> System Administration </h1>
+            <div class="basic">
+                <div class="section">
+                    <h1>Bash/Powershell</h1>
+                    <div class="scrolling-wrapper">
+                        {% for video in hvideos %}
+                            <iframe width="325" height="187" 
+                            src={{ video['Link'] }} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                            </iframe>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <h1> Computer networking </h1>
+            <div class="basic">
+                <div class="section">
+                    <a href = "https://www.geeksforgeeks.org/computer-network-tutorials/">(Reference)</a>
+                    <div class="scrolling-wrapper">
+                        {% for video in hvideos %}
+                            <iframe width="325" height="187" 
+                            src={{ video['Link'] }} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                            </iframe>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>            
+        </section>
+    </main>
+</body>
+</html>
