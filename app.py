@@ -75,8 +75,6 @@ def admin():
                         'Link': link
                     })
             return render_template('admin.html',message = "Success")
-    else:
-        return "eroor"
 
     return render_template('admin.html')
     

@@ -130,11 +130,55 @@ input[type='button']
 }
 .basic{
     border: 5px solid var(--dark);
-    
+    margin-bottom: 10px;
+}
+
+.intermedite{
+    border: 5px solid var(--dark);
+    margin-bottom: 10px;
+}
+.advance{
+    border: 5px solid var(--dark);
+    margin-bottom: 10px;
+}
+.practice{
+    border: 5px solid var(--dark);
+    margin-bottom: 10px;
 }
 .section{
     margin: 10px;
 }
+.section a{
+    color: var(--dark);
+    font-family: 'Roboto', sans-serif;
+    opacity: 0.8;
+    text-decoration: none;
+}
+.section a:hover{
+    color: var(--dark);
+    
+    opacity: 1;
+    text-decoration: none;
+}
+/* blockchain */
+.practiceb .section a{
+    color: var(--dark);
+    font-size: 25px;
+    opacity: 0.8;
+    
+}
+.practiceb .section a:hover{
+    color: var(--dark);
+    
+    opacity: 1;
+    text-decoration: none;
+}
+.practiceb{
+    border: 5px solid var(--dark);
+    margin-bottom: 10px;
+}
+ /* .blockchain */
+
 
 
 /*------ .main section ------*/

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,11 +34,10 @@
 
     <main id="public-story">
         <section class="courses" id="Courses">
-            <h1 style="text-decoration: underline;">Web Dev</h1>
-            <h1>Basic</h1>
+            <h1>Languages/DSA/Database</h1>
             <div class="basic">
                 <div class="section">
-                    <h1>HTML</h1><a href = "https://developer.mozilla.org/en-US/docs/Web/HTML">(Documentation)</a>
+                    <h1>Python</h1><a href = "https://docs.python.org/3/">(Documentation)</a>
                     <div class="scrolling-wrapper">
                         {% for video in hvideos %}
                             <iframe width="325" height="187" 
@@ -46,7 +46,7 @@
                             </iframe>
                         {% endfor %}
                     </div>
-                    <h1>CSS</h1><a href = "https://developer.mozilla.org/en-US/docs/Web/CSS">(Documentation)</a>
+                    <h1>DSA</h1><a href = "https://www.geeksforgeeks.org/data-structures/">(Reference)</a>
                     <div class="scrolling-wrapper">
                         {% for video in cvideos %}
                             <iframe width="325" height="187" 
@@ -55,13 +55,24 @@
                             </iframe>
                         {% endfor %}
                     </div>
+                    <h1>MySQL</h1><a href = "https://dev.mysql.com/doc/">(Documentation)</a>
+                    <div class="scrolling-wrapper">
+                        {% for video in hvideos %}
+                            <iframe width="325" height="187" 
+                            src={{ video['Link'] }} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                            </iframe>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
-            <h1> Intermedite </h1>
+            <h1> Libraries </h1>
             <div class="intermedite">
-                
                 <div class="section">
-                    <h1>JavaScript</h1><a href = "https://devdocs.io/javascript">(Documentation)</a>
+                    <h1>Numpy/Pandas/Matplotlib</h1>
+                    <a href = "https://numpy.org/doc/">(numpy(doc)/</a>
+                    <a href = "https://pandas.pydata.org/docs/">Pandas(doc)/</a>
+                    <a href = "https://matplotlib.org/stable/">(Matplotlib(doc))</a>
                     <div class="scrolling-wrapper">
                         {% for video in jvideos %}
                             <iframe width="325" height="187" 
@@ -71,21 +82,12 @@
                         {% endfor %}    
                     </div>
                 
-                    <h1>Node Js</h1><a href = "https://devdocs.io/javascript">(Documentation)</a>
-                    <div class="scrolling-wrapper">
-                        {% for video in njvideos %}
-                            <iframe width="325" height="187" 
-                            src={{ video['Link'] }} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                            </iframe>
-                        {% endfor %}    
-                    </div>
                 </div>
             </div>
-            <h1> Advance </h1>
+            <h1> Mathematics & Statistics </h1>
             <div class="advance">
                 <div class="section">
-                    <h1>PostgreSQL</h1><a href = "https://devdocs.io/javascript">(Documentation)</a>
+                    <a href = "https://devdocs.io/javascript">(Books)</a>
                     <div class="scrolling-wrapper">
                         {% for video in dbvideos %}
                             <iframe width="325" height="187" 
@@ -94,10 +96,14 @@
                             </iframe>
                         {% endfor %}    
                     </div>
-
-                    <h1>React</h1><a href = "https://devdocs.io/javascript">(Documentation)</a>
+                </div>
+            </div>
+            <h1> Machine learning concepts </h1>
+            <div class="advance">
+                <div class="section">
+                    <a href = "https://devdocs.io/javascript">(Books)</a>
                     <div class="scrolling-wrapper">
-                        {% for video in revideos %}
+                        {% for video in dbvideos %}
                             <iframe width="325" height="187" 
                             src={{ video['Link'] }} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
@@ -107,9 +113,25 @@
                 </div>
             </div>
 
+            <h1> Deep learning concepts </h1>
+            <div class="advance">
+                <div class="section">
+                    <h1>Tensorflow/Keras</h1>
+                    <a href = "https://www.tensorflow.org/api_docs">(Tensorflow(doc)/</a>
+                    <a href = "https://keras.io/api/">(Keras(doc))</a>
+                    <div class="scrolling-wrapper">
+                        {% for video in dbvideos %}
+                            <iframe width="325" height="187" 
+                            src={{ video['Link'] }} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                            </iframe>
+                        {% endfor %}    
+                    </div>
+                </div>
+            </div>
+            <h1>Projects</h1>
             <div class="practice">
                 <div class="section">
-                    <h1>Projects</h1><a href = "https://devdocs.io/javascript">(Documentation)</a>
                     <div class="scrolling-wrapper">
                         {% for video in project %}
                             <iframe width="325" height="187" 

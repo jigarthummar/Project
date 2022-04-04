@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Blog</title>
+    <title>Blockchain</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,11 +33,11 @@
 
     <main id="public-story">
         <section class="courses" id="Courses">
-            <h1 style="text-decoration: underline;">Web Dev</h1>
-            <h1>Basic</h1>
+            <h1 style="text-decoration: underline;">Blockchain</h1>
+            <h1>Basic </h1>
             <div class="basic">
                 <div class="section">
-                    <h1>HTML</h1><a href = "https://developer.mozilla.org/en-US/docs/Web/HTML">(Documentation)</a>
+                    <h1>Blockchain</h1><a href = "https://developer.mozilla.org/en-US/docs/Web/HTML">(Documentation)</a>
                     <div class="scrolling-wrapper">
                         {% for video in hvideos %}
                             <iframe width="325" height="187" 
@@ -46,7 +46,8 @@
                             </iframe>
                         {% endfor %}
                     </div>
-                    <h1>CSS</h1><a href = "https://developer.mozilla.org/en-US/docs/Web/CSS">(Documentation)</a>
+
+                    <h1>Tools you need</h1><a href = "https://developer.mozilla.org/en-US/docs/Web/CSS">(Documentation)</a>
                     <div class="scrolling-wrapper">
                         {% for video in cvideos %}
                             <iframe width="325" height="187" 
@@ -57,10 +58,19 @@
                     </div>
                 </div>
             </div>
-            <h1> Intermedite </h1>
+            <h1> Languages to learn </h1>
             <div class="intermedite">
                 
                 <div class="section">
+                    <h1> Solidity </h1><a href = "https://devdocs.io/javascript">(Documentation)</a>
+                    <div class="scrolling-wrapper">
+                        {% for video in njvideos %}
+                            <iframe width="325" height="187" 
+                            src={{ video['Link'] }} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                            </iframe>
+                        {% endfor %}    
+                    </div>
                     <h1>JavaScript</h1><a href = "https://devdocs.io/javascript">(Documentation)</a>
                     <div class="scrolling-wrapper">
                         {% for video in jvideos %}
@@ -70,31 +80,11 @@
                             </iframe>
                         {% endfor %}    
                     </div>
-                
-                    <h1>Node Js</h1><a href = "https://devdocs.io/javascript">(Documentation)</a>
-                    <div class="scrolling-wrapper">
-                        {% for video in njvideos %}
-                            <iframe width="325" height="187" 
-                            src={{ video['Link'] }} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                            </iframe>
-                        {% endfor %}    
-                    </div>
                 </div>
             </div>
-            <h1> Advance </h1>
+            <h1> Frameworks & libraries </h1>
             <div class="advance">
                 <div class="section">
-                    <h1>PostgreSQL</h1><a href = "https://devdocs.io/javascript">(Documentation)</a>
-                    <div class="scrolling-wrapper">
-                        {% for video in dbvideos %}
-                            <iframe width="325" height="187" 
-                            src={{ video['Link'] }} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                            </iframe>
-                        {% endfor %}    
-                    </div>
-
                     <h1>React</h1><a href = "https://devdocs.io/javascript">(Documentation)</a>
                     <div class="scrolling-wrapper">
                         {% for video in revideos %}
@@ -104,20 +94,33 @@
                             </iframe>
                         {% endfor %}    
                     </div>
-                </div>
-            </div>
-
-            <div class="practice">
-                <div class="section">
-                    <h1>Projects</h1><a href = "https://devdocs.io/javascript">(Documentation)</a>
+                    <h1>Node Js</h1><a href = "https://devdocs.io/javascript">(Documentation)</a>
                     <div class="scrolling-wrapper">
-                        {% for video in project %}
+                        {% for video in njvideos %}
                             <iframe width="325" height="187" 
                             src={{ video['Link'] }} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                             </iframe>
                         {% endfor %}    
                     </div>
+                    <h1>Web3js</h1><a href = "https://devdocs.io/javascript">(Documentation)</a>
+                    <div class="scrolling-wrapper">
+                        {% for video in njvideos %}
+                            <iframe width="325" height="187" 
+                            src={{ video['Link'] }} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                            </iframe>
+                        {% endfor %}    
+                    </div>
+
+                    
+                </div>
+            </div>
+
+            <div class="practiceb">
+                <div class="section">
+                    <a href = "{{ url_for('wd') }}">(Webdev)</a>
+                    
                 </div>
             </div>
             
