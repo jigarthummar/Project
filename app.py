@@ -346,7 +346,7 @@ def ds():
             'Course' : "Data Science"
         })
         excel_videos = study_coll.find({'Course' : "es"})
-        lib_videos = study_coll.find({'Course' : "lib"})
+        lib_videos = study_coll.find({'Course' : "library"})
         ml_videos = study_coll.find({'Course' : "mlc"})
         dlc_videos = study_coll.find({'Course' : "dlc"})
         db_videos = study_coll.find({'Course' : "mongo"})
@@ -363,4 +363,4 @@ def ds():
 
     
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='localhost',port=5059,debug=True)
