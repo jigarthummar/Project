@@ -166,7 +166,56 @@ def wd():
     flash('Please log in', 'error')
     return render_template('login.html')
 
-@app.route('/wd', methods = ['GET','POST'])
+@app.route('/bc')
+@login_required
+def bc():
+    if 'username' in session:
+        bc_videos = study_coll.find({'Course' : "blockchain"})
+        tool_videos = study_coll.find({'Course' : "tools"})
+        js_videos = study_coll.find({'Course' : "js"})
+        solid_videos = study_coll.find({'Course' : "solid"})
+        njs_videos = study_coll.find({'Course' : "njs"})
+        re_videos = study_coll.find({'Course' : "react"})
+        wb_videos = study_coll.find({'Course' : "wb3"})
+        return render_template('blockchain.html', 
+                                hvideos = bc_videos,
+                                cvideos = tool_videos,
+                                jvideos = js_videos,
+                                svideos = solid_videos,
+                                njvideos = njs_videos, 
+                                revideos = re_videos,
+                                project = wb_videos)
+    flash('Please log in', 'error')
+    return render_template('login.html')
+
+@app.route('/ml')
+@login_required
+def ml():
+    if 'username' in session:
+        python_videos = study_coll.find({'Course' : "python"})
+        dsa_videos = study_coll.find({'Course' : "m_dsa"})
+        js_videos = study_coll.find({'Course' : "js"})
+        mysql_videos = study_coll.find({'Course' : "mysql"})
+        lib_videos = study_coll.find({'Course' : "library"})
+        ms_videos = study_coll.find({'Course' : "maths"})
+        mlc_videos = study_coll.find({'Course' : "mlc"})
+        dlc_videos = study_coll.find({'Course' : "dlc"})
+        project = study_coll.find({'Course' : "ml_project"})
+        return render_template('machinel.html', 
+                                pvideos = python_videos,
+                                dsvideos = dsa_videos,
+                                jvideos = js_videos,
+                                mvideos = mysql_videos,
+                                lvideos = lib_videos, 
+                                msvideos = ms_videos,
+                                mlcvideos = mlc_videos,
+                                dlcvideos = dlc_videos,
+                                project = project)
+    flash('Please log in', 'error')
+    return render_template('login.html')
+
+
+"""@app.route('/wd', methods = ['GET','POST'])
 @login_required
 def record_wd():
     if 'username' in session:
@@ -174,7 +223,7 @@ def record_wd():
                         'username': session['username'],
                         'Link': request.form['first']
                     })
-    return render_template('webdev.html')
+    return render_template('webdev.html')"""
 
     
 if __name__ == "__main__":
