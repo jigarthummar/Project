@@ -1,5 +1,5 @@
-from email import message
-from flask import Flask, render_template ,redirect, url_for, session, request, make_response,flash,url_for,send_from_directory,jsonify
+
+from flask import Flask, render_template ,redirect, url_for, session, request, make_response,flash,url_for
 from pymongo import MongoClient
 from functools import wraps
 import string 
@@ -50,13 +50,19 @@ def profile():
     if session['username'] == 'admin':
         return render_template('admin.html')
     elif 'username' in session:
+        cours = "Nothing yet"
+        course = user_coll.find({'username': session['username']}).sort([('Course', 1)]).limit(1)
+        if course:
+            for c in course:
+                cours = c["Course"]
         user = collection.find_one({'username': session['username']})
         return render_template('profile.html',
         fname = user['FirstName'],
         finame = user['FirstName'],
         sname = user['LastName'],
         uname = user['username'],
-        bdate = user['Birthdate']
+        bdate = user['Birthdate'],
+        course = cours
         )
     return redirect(url_for('login'))
 
@@ -201,6 +207,11 @@ def signout():
 @login_required
 def wd():
     if 'username' in session:
+        user_coll.insert_one({
+            'username' : session['username'],
+            'Course' : "Web Developement"
+        })
+
         html_videos = study_coll.find({'Course' : "html"})
         css_videos = study_coll.find({'Course' : "css"})
         js_videos = study_coll.find({'Course' : "js"})
@@ -209,9 +220,12 @@ def wd():
         re_videos = study_coll.find({'Course' : "react"})
         pr_videos = study_coll.find({'Course' : "w_project"})
         return render_template('webdev.html', 
-                                hvideos = html_videos,cvideos = css_videos,
-                                jvideos = js_videos,njvideos = njs_videos,
-                                dbvideos = db_videos, revideos = re_videos,
+                                hvideos = html_videos,
+                                cvideos = css_videos,
+                                jvideos = js_videos,
+                                njvideos = njs_videos,
+                                dbvideos = db_videos, 
+                                revideos = re_videos,
                                 project = pr_videos)
     flash('Please log in', 'error')
     return render_template('login.html')
@@ -220,6 +234,11 @@ def wd():
 @login_required
 def bc():
     if 'username' in session:
+        user_coll.insert_one({
+            'username' : session['username'],
+            'Course' : "Block Chain"
+        })
+
         bc_videos = study_coll.find({'Course' : "blockchain"})
         tool_videos = study_coll.find({'Course' : "tools"})
         js_videos = study_coll.find({'Course' : "js"})
@@ -242,6 +261,11 @@ def bc():
 @login_required
 def ml():
     if 'username' in session:
+        user_coll.insert_one({
+            'username' : session['username'],
+            'Course' : "Machine Learning"
+        })
+
         python_videos = study_coll.find({'Course' : "python"})
         dsa_videos = study_coll.find({'Course' : "m_dsa"})
         js_videos = study_coll.find({'Course' : "js"})
@@ -269,6 +293,11 @@ def ml():
 @login_required
 def pl():
     if 'username' in session:
+        user_coll.insert_one({
+            'username' : session['username'],
+            'Course' : "Programming Languages"
+        })
+
         python_videos = study_coll.find({'Course' : "python"})
         c_videos = study_coll.find({'Course' : "c"})
         cc_videos = study_coll.find({'Course' : "c++"})
@@ -291,6 +320,11 @@ def pl():
 @login_required
 def cs():
     if 'username' in session:
+        user_coll.insert_one({
+            'username' : session['username'],
+            'Course' : "Cyber Security"
+        })
+
         hv_videos = study_coll.find({'Course' : "hv"})
         cbp_videos = study_coll.find({'Course' : "cbash"})
         sbp_videos = study_coll.find({'Course' : "sbash"})
@@ -307,6 +341,10 @@ def cs():
 @login_required
 def ds():
     if 'username' in session:
+        user_coll.insert_one({
+            'username' : session['username'],
+            'Course' : "Data Science"
+        })
         excel_videos = study_coll.find({'Course' : "es"})
         lib_videos = study_coll.find({'Course' : "lib"})
         ml_videos = study_coll.find({'Course' : "mlc"})
