@@ -271,25 +271,15 @@ def pl():
 @login_required
 def cs():
     if 'username' in session:
-        python_videos = study_coll.find({'Course' : "python"})
-        dsa_videos = study_coll.find({'Course' : "m_dsa"})
-        js_videos = study_coll.find({'Course' : "js"})
-        mysql_videos = study_coll.find({'Course' : "mysql"})
-        lib_videos = study_coll.find({'Course' : "library"})
-        ms_videos = study_coll.find({'Course' : "maths"})
-        mlc_videos = study_coll.find({'Course' : "mlc"})
-        dlc_videos = study_coll.find({'Course' : "dlc"})
-        project = study_coll.find({'Course' : "ml_project"})
+        hv_videos = study_coll.find({'Course' : "hv"})
+        cbp_videos = study_coll.find({'Course' : "cbash"})
+        sbp_videos = study_coll.find({'Course' : "sbash"})
+        cn_videos = study_coll.find({'Course' : "cn"})
         return render_template('cyber_security.html', 
-                                pvideos = python_videos,
-                                dsvideos = dsa_videos,
-                                jvideos = js_videos,
-                                mvideos = mysql_videos,
-                                lvideos = lib_videos, 
-                                msvideos = ms_videos,
-                                mlcvideos = mlc_videos,
-                                dlcvideos = dlc_videos,
-                                project = project)
+                                hvideos = hv_videos,
+                                cbpvideos = cbp_videos,
+                                sbpvideos = sbp_videos,
+                                cnvideos = cn_videos)
     flash('Please log in', 'error')
     return render_template('login.html')
 
