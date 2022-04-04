@@ -51,7 +51,7 @@ def profile():
         return render_template('admin.html')
     elif 'username' in session:
         cours = "Nothing yet"
-        course = user_coll.find({'username': session['username']}).sort([('Course', 1)]).limit(1)
+        course = user_coll.find({'username': session['username']})
         if course:
             for c in course:
                 cours = c["Course"]
@@ -76,7 +76,7 @@ def admin():
         if Course != "None":
             link = request.form.get('w_link')
             study_coll.insert_one({
-                        'Number' : 4,
+                        
                         'Course': str(Course),
                         'Link': link
                     })
@@ -86,7 +86,7 @@ def admin():
         if Course != "None":
             link = request.form.get('m_link')
             study_coll.insert_one({
-                        'Number' : 4,
+                        
                         'Course': str(Course),
                         'Link': link
                     })
@@ -96,7 +96,7 @@ def admin():
         if Course != "None":
             link = request.form.get('b_link')
             study_coll.insert_one({
-                        'Number' : 4,
+                        
                         'Course': str(Course),
                         'Link': link
                     })
@@ -106,7 +106,7 @@ def admin():
         if Course != "None":
             link = request.form.get('p_link')
             study_coll.insert_one({
-                        'Number' : 4,
+                        
                         'Course': str(Course),
                         'Link': link
                     })
@@ -116,7 +116,7 @@ def admin():
         if Course != "None":
             link = request.form.get('c_link')
             study_coll.insert_one({
-                        'Number' : 4,
+                        
                         'Course': str(Course),
                         'Link': link
                     })
@@ -126,7 +126,7 @@ def admin():
         if Course != "None":
             link = request.form.get('d_link')
             study_coll.insert_one({
-                        'Number' : 4,
+                        
                         'Course': str(Course),
                         'Link': link
                     })
@@ -236,7 +236,7 @@ def bc():
     if 'username' in session:
         user_coll.insert_one({
             'username' : session['username'],
-            'Course' : "Block Chain"
+            'Course' : "Blockchain"
         })
 
         bc_videos = study_coll.find({'Course' : "blockchain"})
@@ -247,8 +247,8 @@ def bc():
         re_videos = study_coll.find({'Course' : "react"})
         wb_videos = study_coll.find({'Course' : "wb3"})
         return render_template('blockchain.html', 
-                                hvideos = bc_videos,
-                                cvideos = tool_videos,
+                                bvideos = bc_videos,
+                                tvideos = tool_videos,
                                 jvideos = js_videos,
                                 svideos = solid_videos,
                                 njvideos = njs_videos, 
@@ -327,7 +327,7 @@ def cs():
 
         hv_videos = study_coll.find({'Course' : "hv"})
         cbp_videos = study_coll.find({'Course' : "cbash"})
-        sbp_videos = study_coll.find({'Course' : "sbash"})
+        sbp_videos = study_coll.find({'Course' : "sadm"})
         cn_videos = study_coll.find({'Course' : "cn"})
         return render_template('cyber_security.html', 
                                 hvideos = hv_videos,
@@ -363,4 +363,4 @@ def ds():
 
     
 if __name__ == "__main__":
-    app.run(host='localhost',port=5059,debug=True)
+    app.run(debug=True)
