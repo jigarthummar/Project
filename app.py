@@ -38,6 +38,7 @@ def login_required(func):
     return verify
 
 @app.route('/')
+@app.route('/index')
 def index():
     blog = list(note.find({},{'_id': False}))
     for x in blog:
