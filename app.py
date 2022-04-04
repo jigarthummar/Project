@@ -96,6 +96,16 @@ def admin():
                     })
             return render_template('admin.html',message = "Success")
 
+        Course = request.form.get('pl')
+        if Course != "None":
+            link = request.form.get('p_link')
+            study_coll.insert_one({
+                        'Number' : 4,
+                        'Course': str(Course),
+                        'Link': link
+                    })
+            return render_template('admin.html',message = "Success")
+
     return render_template('admin.html')
     
 
@@ -235,15 +245,53 @@ def ml():
     return render_template('login.html')
 
 
-"""@app.route('/wd', methods = ['GET','POST'])
+@app.route('/pl')
 @login_required
-def record_wd():
+def pl():
     if 'username' in session:
-        user_coll.insert_one({
-                        'username': session['username'],
-                        'Link': request.form['first']
-                    })
-    return render_template('webdev.html')"""
+        python_videos = study_coll.find({'Course' : "python"})
+        c_videos = study_coll.find({'Course' : "c"})
+        cc_videos = study_coll.find({'Course' : "c++"})
+        j_videos = study_coll.find({'Course' : "java"})
+        js_videos = study_coll.find({'Course' : "js"})
+        s_videos = study_coll.find({'Course' : "swift"})
+        go_videos = study_coll.find({'Course' : "go"})
+        return render_template('Prog_lang.html', 
+                                pvideos = python_videos,
+                                csvideos = c_videos,
+                                jvideos = j_videos,
+                                jsvideos = js_videos,
+                                ccvideos = cc_videos,
+                                svideos = s_videos,
+                                gvideos = go_videos)
+    flash('Please log in', 'error')
+    return render_template('login.html')
+
+@app.route('/cs')
+@login_required
+def cs():
+    if 'username' in session:
+        python_videos = study_coll.find({'Course' : "python"})
+        dsa_videos = study_coll.find({'Course' : "m_dsa"})
+        js_videos = study_coll.find({'Course' : "js"})
+        mysql_videos = study_coll.find({'Course' : "mysql"})
+        lib_videos = study_coll.find({'Course' : "library"})
+        ms_videos = study_coll.find({'Course' : "maths"})
+        mlc_videos = study_coll.find({'Course' : "mlc"})
+        dlc_videos = study_coll.find({'Course' : "dlc"})
+        project = study_coll.find({'Course' : "ml_project"})
+        return render_template('cyber_security.html', 
+                                pvideos = python_videos,
+                                dsvideos = dsa_videos,
+                                jvideos = js_videos,
+                                mvideos = mysql_videos,
+                                lvideos = lib_videos, 
+                                msvideos = ms_videos,
+                                mlcvideos = mlc_videos,
+                                dlcvideos = dlc_videos,
+                                project = project)
+    flash('Please log in', 'error')
+    return render_template('login.html')
 
     
 if __name__ == "__main__":
